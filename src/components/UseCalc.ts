@@ -26,9 +26,13 @@ export default function useCalc() {
             case "division":
                 result = a / b;
                 break;
-            case "exponentiation":
-                result = a ** b;
-                break;
+            case "exponentiation": {
+                let answ = 1;
+                for (let i = 0; i < Number(b); i++) {
+                    answ = answ * Number(a);
+                }
+                result = answ;
+                break; }
             default:
                 return;
         }
